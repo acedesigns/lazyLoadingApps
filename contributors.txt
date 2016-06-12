@@ -1,1 +1,3 @@
-Gert Hattingh
+This file contains a list of people who have made large contributions to this repo.
+
+Anele 'Ace' Maqanda
