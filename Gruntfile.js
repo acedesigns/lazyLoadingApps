@@ -53,11 +53,11 @@
         ignorePath:  /\.\.\//
       }
     },
-    
+
     // The actual grunt server settings
     connect: {
       options: {
-        port: 1880,
+        port: 1881,
         hostname: 'localhost',
         livereload: 35722
       },

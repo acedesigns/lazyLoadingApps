@@ -26,27 +26,29 @@
           templateUrl: 'views/app.html',
           resolve    : {
             deps  :['$ocLazyLoad', function($ocLazyLoad){
-              //return $ocLazyLoad.load(['js/controllers/connCtrl.js']);
+              //return $ocLazyLoad.load(['.assets/js/controllers/connCtrl.js']);
             }]
           }
       	})
         .state('app.home', {
           url: '/home',
-          templateUrl: 'views/home.html',          
+          templateUrl: '../views/home.html',          
           resolve: {
             deps: ['$ocLazyLoad', 'uiLoad',
               function( $ocLazyLoad, uiLoad ){
                 return $ocLazyLoad.load(['GridRotator', 'owlCarousel', 'TweenMax'])
                   .then( function(){
                     return $ocLazyLoad.load([ 
-                      'js/controllers/homeCtrl.js',
-                      'js/factories/reports.factory.js',
+                      './assets/js/controllers/homeCtrl.js',
+                      './assets/js/factories/reports.factory.js',
                     ]);
                   });
               }
             ]
           }
         })
+
+        /*
         .state('app.search-results',{
           url     : '/search-results?city&category',
           templateUrl : 'views/search-tours.html',
@@ -80,6 +82,7 @@
             }]
           }
         })
+
         .state('app.about', {
           url : '/about',
           templateUrl : 'views/about.html',
@@ -92,6 +95,6 @@
               }
             ]
           }
-        });
+        });*/
     }]);
 })();

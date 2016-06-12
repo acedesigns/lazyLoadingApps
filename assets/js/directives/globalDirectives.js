@@ -24,37 +24,7 @@
 			restrict: 'AE',
 			link: jQueryFunction
 		};
-	})
-	
-	.directive('scroll', function($window){
-
-		function scrollFunction ($scope, element, attrs, $controller){
-			var $scroll = $(element);
-
-			$scroll.niceScroll({
-				cursorcolor: "#000",
-		        cursorborder: "0px solid #fff",
-		        railpadding: {
-		            top: 0,
-		            right: 0,
-		            left: 0,
-		            bottom: 0
-		        },
-		        cursorwidth: "10px",
-		        cursorborderradius: "0px",
-		        cursoropacitymin: 0.2,
-		        cursoropacitymax: 0.8,
-		        boxzoom: true,
-		        horizrailenabled: false,
-		        zindex: 9999 
-		    });
-		}
-
-		return{
-			restrict : 'A',
-			link : scrollFunction
-		};
-	})
+	})	
 
 	.directive('grider',  function(){
 		
@@ -180,23 +150,7 @@
 			restrict : 'AE',
 			link: Carousel
 		};
-	})
-	
-	.directive('dialog', function(){
-		
-		function dialogFn ($scope, element, attrs) {
-			console.log("dialogFn function");
-			
-			//element.magnificPopup();
-			//console.log(element);
-			//popUp.magnificPopup();
-		}
-
-		return {
-			restrict: 'AE',
-			link: dialogFn
-		};
-	})
+	})	
 	
 	.directive('dropit', function(){
 		
@@ -211,31 +165,6 @@
 		};
 	})
 	
-	.directive('expandRevTxt', function(){
-		/*
-			$('.booking-item-review-expand').click(function(event) {
-			    console.log('baz');
-			    var parent = $(this).parent('.booking-item-review-content');
-			    if (parent.hasClass('expanded')) {
-			        parent.removeClass('expanded');
-			    } else {
-			        parent.addClass('expanded');
-			    }
-			});
-		*/
-		
-		function expandRevTxt ($scope, element, attr) {
-
-			element.find('.booking-item-review-expand').click(function () {
-				console.log('yes');
-			});
-		}
-		
-		return {
-			restrict	: 'AE', // E = Element, A = Attribute, C = Class, M = Comment
-			link		: expandRevTxt
-		};
-	});
 })();
 
 
@@ -266,6 +195,7 @@
             }
 		};
 	})
+
 	.controller('homeSlideCtrl', function($scope){
 		$scope.slides = [
             {image: '../img/2048x1365-copy5.png', price : '1 800', 	title: 'Adventure Activities'},
