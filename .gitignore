@@ -1,0 +1,19 @@
+# Ignore the following files and folders
+
+node_modules/
+bower_components/
+app/vendor/
+node_modules
+npm-debug.log
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+*.swo
+.DS_Store
