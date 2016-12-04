@@ -1,13 +1,13 @@
-/* =======================================================
+/* =============================================================================
  *
- * =======================================================
+ * =============================================================================
  */
 
-var app =  
+var app =
 angular.module('app')
   .config([  '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', 'datepickerConfig', 'datepickerPopupConfig',
     function ($controllerProvider,   $compileProvider,   $filterProvider,   $provide,   datepickerConfig,   datepickerPopupConfig) {
-        
+
         // lazy controller, directive and service
         app.controller = $controllerProvider.register;
         app.directive  = $compileProvider.directive;
@@ -20,14 +20,14 @@ angular.module('app')
     }
   ])
   .run( function($rootScope, $window, $state) {
-        
+
         $rootScope.$on('$stateChangeStart', function(event, toParams, fromState, fromParams, options) {
             //console.log('$stateChangeStart');
             //console.log(toParams);
 
         });
-        
-        $rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams){ 
+
+        $rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams){
             console.log(unfoundState.to); // "lazy.state"
             console.log(unfoundState.toParams); // {a:1, b:2}
             console.log(unfoundState.options); // {inherit:false} + default options
@@ -39,6 +39,6 @@ angular.module('app')
 
         $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             //console.log('$stateChangeSuccess');
-            
+
         });
   });

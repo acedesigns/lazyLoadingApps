@@ -1,6 +1,6 @@
-/* =======================================================
+/* =============================================================================
  *
- * =======================================================
+ * =============================================================================
  */
 
 (function() {
@@ -10,10 +10,10 @@
   	.run([        '$rootScope', '$state', '$stateParams',
       	function ( $rootScope,   $state,   $stateParams) {
           $rootScope.$state = $state;
-          $rootScope.$stateParams = $stateParams;        
+          $rootScope.$stateParams = $stateParams;
       	}
     ])
-    .config([ '$stateProvider', '$urlRouterProvider', '$locationProvider', 'JQ_CONFIG', 
+    .config([ '$stateProvider', '$urlRouterProvider', '$locationProvider', 'JQ_CONFIG',
         function(   $stateProvider,   $urlRouterProvider,   $locationProvider ,  JQ_CONFIG) {
   	    //$locationProvider.html5Mode({enabled:true, requireBase:true});
 
@@ -32,13 +32,13 @@
       	})
         .state('app.home', {
           url: '/home',
-          templateUrl: '../views/home.html',          
+          templateUrl: '../views/home.html',
           resolve: {
             deps: ['$ocLazyLoad', 'uiLoad',
               function( $ocLazyLoad, uiLoad ){
                 return $ocLazyLoad.load(['GridRotator', 'owlCarousel', 'TweenMax'])
                   .then( function(){
-                    return $ocLazyLoad.load([ 
+                    return $ocLazyLoad.load([
                       './assets/js/controllers/homeCtrl.js',
                       './assets/js/factories/reports.factory.js',
                     ]);
