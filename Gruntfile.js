@@ -56,13 +56,6 @@
         ignorePath:  /\.\.\//
       }
     },
-    /*Combining files */
-    concat: {
-      js: {
-        src: ['<%= appSetting.app %>/assets/js/{,*/}*.js'],
-        dest: '<%= appSetting.app %>/dest/js/concat.js'
-      }
-    },
 
     // The actual grunt server settings
     connect: {
@@ -100,11 +93,6 @@
     ]);
   });
 
-  grunt.registerTask('concat', 'Compile then', function (target) {
-    grunt.task.run([
-      'concat',
-    ]);
-  });
 
   grunt.registerTask('install', 'install the backend and frontend dependencies', function() {
     var exec = require('child_process').exec;
