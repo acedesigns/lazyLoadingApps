@@ -1,7 +1,9 @@
 {
-  "name"          : "App",
+  "name"          : "app",
   "version"       : "0.1.0",
   "description"   : "",
+  "homepage"      : "https://github.com/acedesigns",
+  "license"       : "MIT",
   "appPath"       : "./",
   "moduleName"    : "webSiteApp",
   "dependencies": {

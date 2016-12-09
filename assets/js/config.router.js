@@ -13,11 +13,13 @@
           $rootScope.$stateParams = $stateParams;
       	}
     ])
-    .config([ '$stateProvider', '$urlRouterProvider', '$locationProvider', 'JQ_CONFIG',
-        function(   $stateProvider,   $urlRouterProvider,   $locationProvider ,  JQ_CONFIG) {
+    .config([ '$stateProvider', '$urlRouterProvider', '$locationProvider', 'JQ_CONFIG', '$httpProvider',
+        function(   $stateProvider,   $urlRouterProvider,   $locationProvider ,  JQ_CONFIG, $httpProvider) {
   	    //$locationProvider.html5Mode({enabled:true, requireBase:true});
 
   	    $urlRouterProvider.otherwise('/app/home');
+
+				//$httpProvider.interceptors.push('API_Interceptor');
 
   	  $stateProvider
     	 .state('app', {
@@ -26,7 +28,7 @@
           templateUrl: 'views/app.html',
           resolve    : {
             deps  :['$ocLazyLoad', function($ocLazyLoad){
-              //return $ocLazyLoad.load(['.assets/js/controllers/connCtrl.js']);
+              //return $ocLazyLoad.load(['./assets/js/services/interceptor.js']);
             }]
           }
       	})
@@ -34,15 +36,12 @@
           url: '/home',
           templateUrl: '../views/home.html',
           resolve: {
-            deps: ['$ocLazyLoad', 'uiLoad',
-              function( $ocLazyLoad, uiLoad ){
-                return $ocLazyLoad.load(['GridRotator', 'owlCarousel', 'TweenMax'])
-                  .then( function(){
-                    return $ocLazyLoad.load([
-                      './assets/js/controllers/homeCtrl.js',
-                      './assets/js/factories/reports.factory.js',
-                    ]);
-                  });
+            deps: ['$ocLazyLoad',
+              function( $ocLazyLoad ){
+              	return $ocLazyLoad.load([
+                  './assets/js/controllers/homeCtrl.js',
+                	'./assets/js/factories/reports.factory.js',
+                ]);
               }
             ]
           }

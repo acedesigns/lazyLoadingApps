@@ -1,7 +1,7 @@
 
-/* =======================================================
+/* =============================================================================
  *  Gruntfile.js
- * =======================================================
+ * =============================================================================
  */
 
  module.exports = function(grunt) {
@@ -37,10 +37,13 @@
         ]
       },
       styles: {
-        files: ['<%= appSetting.app %>/css/{,*/}*.css']
+        files: ['<%= appSetting.app %>/assets/css/{,*/}*.css'],
+        options: {
+          livereload: '<%= connect.options.livereload %>'
+        }
       },
       js: {
-        files: ['<%= appSetting.app %>/js/{,*/}*.js'],
+        files: ['<%= appSetting.app %>/assets/js/{,*/}*.js'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -51,6 +54,13 @@
       app: {
         src: ['<%= appSetting.app %>/index.html'],
         ignorePath:  /\.\.\//
+      }
+    },
+    /*Combining files */
+    concat: {
+      js: {
+        src: ['<%= appSetting.app %>/assets/js/{,*/}*.js'],
+        dest: '<%= appSetting.app %>/dest/js/concat.js'
       }
     },
 
@@ -87,6 +97,12 @@
       'wiredep',
       'connect:livereload',
       'watch'
+    ]);
+  });
+
+  grunt.registerTask('concat', 'Compile then', function (target) {
+    grunt.task.run([
+      'concat',
     ]);
   });
 

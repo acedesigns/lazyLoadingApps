@@ -7,14 +7,20 @@
   "repository"  : "",
   "homepage"    : "http://acedesigns.co.za",
   "main"        : "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acedesigns"
+  },
   "dependencies": {
     "grunt"                 : "^0.4.5"
   },
-  "devDependencies": {    
+  "devDependencies": {
     "grunt-contrib-connect" : "^0.8.0",
     "grunt-contrib-watch"   : "^0.6.0",
+    "grunt-contrib-concat"  : "^0.5.1",
     "jit-grunt"             : "^0.9.1",
     "grunt-wiredep"         : "^1.9.0",
+    "grunt-wiredep"         : "^3.0.0",
     "http-server"           : "^0.6.1"
   },
   "contributors": [
