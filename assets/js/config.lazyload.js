@@ -10,7 +10,7 @@
 	.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
 
 		$ocLazyLoadProvider.config({
-			debug 	: true,
+			debug 	: false,
 			events 	: true,
 			modules	:[
 				      {
@@ -45,11 +45,11 @@
               },
               {
                   name: 'magnific',
-                  files: [ 
+                  files: [
                       './assets/js/plug-ins/magnific.js'
                   ]
               }
 			]
-		});		
+		});
 	}]);
 })();

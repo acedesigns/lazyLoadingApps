@@ -1,3 +1,5 @@
+
+
 /* =============================================================================
  *
  * =============================================================================
@@ -19,7 +21,7 @@
 
   	    $urlRouterProvider.otherwise('/app/home');
 
-				//$httpProvider.interceptors.push('API_Interceptor');
+				$httpProvider.interceptors.push('API_Interceptor');
 
   	  $stateProvider
     	 .state('app', {

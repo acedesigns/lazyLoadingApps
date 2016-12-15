@@ -1,6 +1,6 @@
 
 /* =============================================================================
- *	
+ *
  * =============================================================================
  */
 
@@ -8,7 +8,7 @@
 (function() {
 	angular.module('app')
 
-	.factory('API_Interceptor', function($q, $injector, $state, $localStorage, $location) {
+	.service('API_Interceptor', function($q, $injector, $localStorage, $location) {
     'use strict';
 
     var service = this;
@@ -20,7 +20,6 @@
       if ($localStorage.token) {
         config.headers.Authorization = '' + $localStorage.token;
       }
-
       return config;
     };
     // END ::This method is called before $http sends the request to the backend ::
@@ -34,12 +33,8 @@
     //
     service.responseError = function (response) {
       if (response.status === 401 || response.status === 403  ) {
-
         delete $localStorage.token;
-
-        //$state.go('login');
         $location.path('login');
-
       }
       return $q.reject(response);
     };

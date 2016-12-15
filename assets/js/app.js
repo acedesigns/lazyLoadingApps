@@ -8,7 +8,7 @@
 
 	angular.module('app', [
 		'ui.bootstrap',
-		'ngResource',
+		'ngStorage',
 		'ui.router',
 		'ngAnimate',
 		'oc.lazyLoad'
