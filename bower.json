@@ -9,11 +9,11 @@
   "dependencies": {
     "angular"             : "1.5.8",
     "angular-animate"     : "1.5.8",
-    "angular-bootstrap"   : "0.13.3",
-    "angular-ui-router"   : "0.2.14",
     "angular-sanitize"    : "1.5.8",
     "angular-resource"    : "1.5.8",
     "angular-touch"       : "1.5.8",
+    "angular-bootstrap"   : "0.13.3",
+    "angular-ui-router"   : "0.2.14",
     "jquery"              : "1.10.1",
     "oclazyload"          : "1.0.8",
     "bootstrap"           : "3.3.7",

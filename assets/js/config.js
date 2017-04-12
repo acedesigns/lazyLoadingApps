@@ -39,6 +39,5 @@ angular.module('app')
 
         $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
             //console.log('$stateChangeSuccess');
-
         });
   });
